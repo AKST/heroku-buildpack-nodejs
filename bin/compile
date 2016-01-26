@@ -149,6 +149,14 @@ cache_build() {
 header "Caching build"
 cache_build | output "$LOG_FILE"
 
+running_babel() {
+  cd $BUILD_DIR
+  npm run build
+}
+
+header "Compiling assets"
+running_babel | output "$LOG_FILE"
+
 summarize_build() {
   cd $BUILD_DIR
   (npm ls --depth=0 | tail -n +2 || true) 2>/dev/null
