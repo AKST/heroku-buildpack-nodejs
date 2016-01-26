@@ -151,7 +151,6 @@ cache_build | output "$LOG_FILE"
 
 running_babel() {
   cd $BUILD_DIR
-  cat package.json
   npm run build
 }
 
